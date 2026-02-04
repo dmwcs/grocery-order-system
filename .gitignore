@@ -32,3 +32,6 @@ coverage/
 
 # TypeScript
 *.tsbuildinfo
+
+getCustomers.js
+createCustomer.js
