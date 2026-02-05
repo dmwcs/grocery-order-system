@@ -20,7 +20,6 @@ export interface PackageBreakdown {
 
 // Calculation result (Part 3 core algorithm)
 export interface CalculationResult {
-  totalPackages: number; // Total packages (goal: minimize)
   totalPrice: number; // Total price
   packages: PackageBreakdown[]; // Package details
 }

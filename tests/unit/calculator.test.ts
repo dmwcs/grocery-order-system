@@ -17,13 +17,12 @@ describe("calculatePackaging", () => {
 
     const result = calculatePackaging(3, packaging, 11.95);
 
-    expect(result.totalPrice).toBe(35.85);
+    expect(result.totalPrice).toBeCloseTo(35.85);
     expect(result.packages).toEqual([
       { packageSize: 1, count: 3, unitPrice: 11.95 },
     ]);
   });
 
-  // Test: Multiple same packages
   it("should handle 10 CE (2 packages of 5)", () => {
     const packaging: PackagingOption[] = [
       { quantity: 5, price: 20.95 },
@@ -47,7 +46,7 @@ describe("calculatePackaging", () => {
 
     const result = calculatePackaging(14, packaging, 7.95);
 
-    expect(result.totalPrice).toBe(78.85);
+    expect(result.totalPrice).toBeCloseTo(78.85);
     expect(result.packages).toEqual([
       { packageSize: 8, count: 1, unitPrice: 40.95 },
       { packageSize: 5, count: 1, unitPrice: 29.95 },
