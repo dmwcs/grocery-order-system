@@ -3,6 +3,7 @@ node_modules/
 
 # Serverless
 .serverless/
+.esbuild/
 
 # Environment variables
 .env
@@ -35,3 +36,5 @@ coverage/
 
 getCustomers.js
 createCustomer.js
+
+SETUP_GUIDE.md
