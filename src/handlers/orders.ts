@@ -56,8 +56,11 @@ export const calculateOrder = async (event: APIGatewayProxyEvent): Promise<APIGa
         code: product.code,
         name: product.name,
         quantity: item.quantity,
-        totalPrice: calculation.totalPrice,
-        packages: calculation.packages,
+        totalPrice: Math.round(calculation.totalPrice * 100) / 100,
+        packages: calculation.packages.map((pkg) => ({
+          ...pkg,
+          unitPrice: Math.round(pkg.unitPrice * 100) / 100,
+        })),
       })
 
       totalPrice += calculation.totalPrice
