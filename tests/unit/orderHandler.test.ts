@@ -12,11 +12,13 @@ jest.mock('../../src/services/productService', () => ({
 }))
 
 // Mock calculator
-const mockCalculatePackaging = jest.fn()
-
 jest.mock('../../src/utils/calculator', () => ({
-  calculatePackaging: mockCalculatePackaging,
+  calculatePackaging: jest.fn(),
 }))
+
+// Import the mocked function after the mock is set up
+import { calculatePackaging } from '../../src/utils/calculator'
+const mockCalculatePackaging = calculatePackaging as jest.MockedFunction<typeof calculatePackaging>
 
 describe('Order Handler', () => {
   beforeEach(() => {
