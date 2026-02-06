@@ -62,8 +62,13 @@ functions:
           path: /products/{code}
           method: delete
 
-
-
+  # Order Calculation Function
+  calculateOrder:
+    handler: src/handlers/orders.calculateOrder
+    events:
+      - httpApi:
+          path: /orders/calculate
+          method: post
 
 resources:
   Resources:
