@@ -1,6 +1,8 @@
 {
   "scripts": {
     "test": "jest",
+    "test:unit": "jest tests/unit",
+    "test:integration": "jest tests/integration --testTimeout=10000",
     "test:watch": "jest --watch"
   },
   "dependencies": {
